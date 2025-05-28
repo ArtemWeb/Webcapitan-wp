@@ -1,0 +1,99 @@
+.footer{
+	.socials{
+		@include media("<=tablet"){
+			justify-content: center;
+		}
+	}
+	&-top{
+		padding: 6rem 0 5.1rem;
+	}
+	.logo{
+		padding-bottom: 2rem;
+		@include media(">=tablet"){
+			padding-bottom: 5rem;
+		}
+	}
+	&-row{
+		display: grid;
+		gap: 1.5rem;
+		grid-template-areas: 
+		"footer1" 
+		"footer2" 
+		"footer3" 
+		"footer4"
+		"footer5";
+		@include media("<=tablet"){
+			justify-content: center;
+			text-align: center;
+		}
+		@include media(">=phone"){
+			grid-template-columns: 2fr 1fr 1fr;
+			grid-template-areas: 
+		"footer1 footer1 footer1"
+		"footer2 footer3 footer3" 
+		"footer4 footer5 footer5"
+		}
+		@include media(">=tablet"){
+			grid-template-areas: 
+		"footer1 footer2 footer3"
+		"footer1 footer4 footer5" 
+		}
+		@include media(">=desktop"){
+			grid-template-columns: 2.2fr 1fr 1fr 1fr 1fr;
+			grid-template-areas: 
+		"footer1 footer2 footer3 footer4 footer5"
+		}
+		@include media(">=laptop"){
+			column-gap: 3rem;
+		}
+	}
+	&-col{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		padding-bottom: 1.5rem;
+		@for $item from 1 through 5 {
+			&:nth-child(#{$item}) {
+				grid-area: footer#{$item};
+			}
+		}
+		li{
+			text-transform: uppercase;
+			font-size: 1.3rem;
+			&:not(:last-child){
+				padding-bottom: 1rem;
+			}
+			&:first-child{
+				font-size: 1.6rem;
+				font-weight: $font-weight-black;
+				a{
+					color: $red;
+				}
+			}
+		}
+	}
+	&-bottom{
+		padding: 1.5rem 0;
+		background-color: $black_light;
+		font-size: 1.4rem;
+		font-family: $font-family-next;
+		.container{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			@include media("<=phone"){
+				flex-direction: column-reverse;
+				gap: 1rem;
+			}
+		}
+	}
+	&-info{
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 1rem;
+		@include media("<=phone"){
+			flex-direction: column;
+		}
+	}
+}

@@ -1,0 +1,186 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site
+// -----------------------------------------------------------------------------
+
+.header{
+	border-bottom: 1px solid rgba(255,255,255,0.2);
+	padding: 2rem 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 100;
+	&-fixed{
+		position: fixed;
+	}
+	&-scrolled{
+		background-color: rgba(0,0,0,0.8);
+		transition: background-color .3s ease;
+	}
+	&-row{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		position: relative;
+	}
+	.logo{
+		z-index: 999;
+	}
+	&-info{
+		position: absolute;
+		top: -2rem;
+		transition: transform .3s ease;
+		left: -100%;
+		width: 100%;
+		height: 100vh;
+		background-color: $black;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 2rem;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 2rem 3rem;
+		z-index: 99;
+		text-transform: uppercase;
+		@include media(">=desktop") {
+			position: relative;
+			left: 0;
+			flex-direction: initial;
+			width: auto;
+			height: auto;
+			top: 0;
+			font-size: 1.5rem;
+			background-color: transparent;
+			justify-content: flex-start;
+			gap: 1rem 6rem;
+		}
+	}
+	.menu{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1.5rem;
+		@include media("<=desktop") {
+			flex-direction: column;
+		}
+		@include media(">=laptop") {
+			gap: 0 3rem;
+		}
+		.current_page_item{
+			a{
+				&:after{
+					width: 100%;
+					transition: width 0.3s ease-out;
+				}
+				&:hover{
+					&:after{
+						width: 0;
+					}
+				}
+			}
+		}
+		a{
+			color: $white;
+			text-transform: uppercase;
+			position: relative;
+			&:after{
+				content: "";
+				width: 0;
+				height: 1px;
+				background-color: $white;
+				position: absolute;
+				bottom: -5px;
+				left: 0;
+				transition: width 0.3s ease-in;
+			}
+			&:hover{
+				&:after{
+					width: 100%;
+    			transition: width 0.3s ease-out;
+				}
+			}
+		}
+	}
+}
+
+.nav-active{
+	overflow: hidden;
+	.header-info{
+		transform: translate3D(100%,0,0);
+		@include media(">=desktop") {
+			transform: translate3D(0,0,0);
+		}
+	}
+}
+
+
+.socials{
+	list-style: none;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0;
+	column-gap: 2rem;
+	a{
+		&:hover{
+			img{
+				scale: 1.2;
+				transition: scale .3s ease;
+			}
+		}
+	}
+}
+
+.nav-opener {
+	width: 2.8rem;
+	height: 2.4rem;
+	padding: 0;
+	background-color: transparent;
+	border: none;
+	position: relative;
+	z-index: 99;
+	cursor: pointer;
+	@include media(">=desktop") {
+		display: none;
+	}
+	&:before,
+	&:after,
+	span {
+		content: "";
+		position: absolute;
+		width: 100%;
+		right: 0;
+		height: 0.4rem;
+		background-color: $white;
+		border-radius: 1rem;
+		@include transition(transform top);
+	}
+	&:before {
+		top: 0;
+	}
+	&:after {
+		bottom: 0;
+	}
+	span {
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	.nav-active &,
+	&[aria-expanded="true"] {
+		&:before {
+			top: 0.9rem;
+			transform: rotate(45deg);
+		}
+		&:after {
+			bottom: 1.1rem;
+			transform: rotate(-45deg);
+		}
+		span {
+			transform: scale(0);
+		}
+	}
+}

@@ -1,0 +1,77 @@
+.about{
+	padding: 10rem 0;
+	@include media(">=desktop"){
+		padding: 25.1rem 0 26rem;
+	}	
+	&-title{
+		text-align: center;
+		padding-bottom: 12rem;
+		position: relative;
+		@include media(">=tablet"){
+			padding-bottom: 18.5rem;
+		}
+		&_letter{
+			font-size: 18rem;
+			font-weight: $font-weight-black;
+			color: $burgundy;
+			position: absolute;
+			text-transform: uppercase;
+			top: -8rem;
+			z-index: -1;
+			left: 0;
+			right: 0;
+			line-height: 1;
+			margin: 0 auto;
+			@include media(">=desktop"){
+				font-size: 24rem;
+				top: -10rem;
+			}
+		}
+	}
+	&-info{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin-left: -1.5rem;
+		margin-right: -1.5rem;
+		gap: 4rem 0;
+	}
+	&-item{
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		align-items: center;
+		flex: 0 0 calc(100% - 3rem);
+		margin-left: 1.5rem;
+		margin-right: 1.5rem;
+		text-align: center;
+		gap: 1.7rem 0;
+		@include media(">=tablet"){
+			flex: 0 0 calc(50% - 3rem);
+		}
+		@include media(">=desktop"){
+			flex: 0 0 calc(33.333333% - 3rem);
+		}
+		@include media(">=laptop"){
+			flex: 0 0 calc(25% - 3rem);
+		}
+		&_img{
+			background-color: $red;
+			width: 12rem;
+			height: 12rem;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			img{
+				max-width: 6rem;
+				max-height: 6rem;
+				height: 100%;
+				width: 100%;
+			}
+		}
+		&_text p{
+			margin: 0;
+		}
+	}
+}

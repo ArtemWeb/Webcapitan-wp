@@ -1,0 +1,28 @@
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+.btn{
+	color: $white;
+	display: inline-block;
+	align-items: center;
+	text-decoration: none;
+	font-size: 1.4rem;
+	background-color: $red;
+	text-transform: uppercase;
+	font-weight: $font-weight-black;
+	justify-content: center;
+	text-align: center;
+	max-width: 30rem;
+	width: 100%;
+	padding: 1.8rem;
+	&:hover{
+		opacity: 0.8;
+		color: $white;
+		transition: opacity .3s ease;
+	}
+	&-form{
+		margin-top: 5.5rem;
+		cursor: pointer;
+	}
+}

@@ -1,0 +1,27 @@
+# Copyright (C) 2023 Anonymous
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: acf-base-theme 1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/acf-base-theme\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2023-07-24T20:33:32+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.8.1\n"
+"X-Domain: acf-base-theme\n"
+
+#. Theme Name of the theme
+msgid "acf-base-theme"
+msgstr ""
+
+#. Description of the theme
+msgid "acf-base-theme theme for Wordpress"
+msgstr ""
+
+#. Author of the theme
+msgid "Anonymous"
+msgstr ""

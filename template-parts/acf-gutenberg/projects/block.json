@@ -1,0 +1,15 @@
+{
+    "name": "acf\/projects",
+    "title": "Block Projects",
+    "acf": {
+        "renderTemplate": "projects.php",
+        "mode": "edit"
+    },
+    "description": "",
+    "category": "custom-acf-blocks",
+    "icon": "editor-code",
+    "keywords": [],
+    "supports": {
+        "anchor": true
+    }
+}

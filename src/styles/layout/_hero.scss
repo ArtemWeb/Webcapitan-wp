@@ -1,0 +1,41 @@
+.hero{
+	min-height: 100svh;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	.container{
+		position: relative;
+		min-height: 100svh;
+	}
+	&-info{
+		position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+		text-align: center;
+		h1{
+			padding-bottom: 1.5rem;
+			@include media('>=laptop') {
+				padding-bottom: 3rem;
+			}
+		}
+		h3{
+			@include media('>=laptop') {
+				letter-spacing: 2.7rem;
+			}
+		}
+	}
+	&-scroll{
+		position: absolute;
+		font-size: 1.4rem;
+		height: 8rem;
+		bottom: 8rem;
+		left: 50%;
+		transform: translateX(-50%);
+		background: url(../images/scroll.svg) no-repeat center bottom;
+	}
+}
+
+html {
+	scroll-behavior: smooth;
+}

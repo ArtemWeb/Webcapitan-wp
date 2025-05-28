@@ -1,0 +1,15 @@
+{
+    "name": "acf\/about",
+    "title": "Block About",
+    "acf": {
+        "renderTemplate": "about.php",
+        "mode": "edit"
+    },
+    "description": "",
+    "category": "custom-acf-blocks",
+    "icon": "editor-code",
+    "keywords": [],
+    "supports": {
+        "anchor": true
+    }
+}

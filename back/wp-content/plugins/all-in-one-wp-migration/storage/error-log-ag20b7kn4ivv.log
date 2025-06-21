@@ -1,0 +1,3 @@
+Jun 21 2025 08:35:57
+{"Number":2,"Message":"rmdir(D:\\OSPanel\\domains\\webcapitan\\wp-content\\plugins\\all-in-one-wp-migration\\storage\\ag20b7kn4ivv): Directory not empty","File":"D:\\OSPanel\\domains\\webcapitan\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\filesystem\\class-ai1wm-directory.php","Line":72}
+

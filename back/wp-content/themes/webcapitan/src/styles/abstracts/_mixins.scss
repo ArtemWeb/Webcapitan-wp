@@ -1,0 +1,87 @@
+@use "sass:list";
+@use "sass:map";
+
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+
+@mixin fontface($fontfamily, $filename, $fontweight: normal, $fontstyle: normal) {
+  @font-face {
+    font-family: $fontfamily;
+    src: url('#{$base-font-path}/#{$filename}.woff2') format('woff2'),
+         url('#{$base-font-path}/#{$filename}.woff') format('woff');
+    font-weight: $fontweight;
+    font-style: $fontstyle;
+    font-display: swap;
+  }
+}
+
+
+
+/// font-smothing
+/// @include font-smoothing(on);
+/// @include font-smoothing(off);
+@mixin font-smoothing($value: on) {
+  @if $value == on {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  } @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+}
+
+
+@mixin hide-text {
+  overflow: hidden;
+  text-indent: 101%;
+  white-space: nowrap;
+}
+
+@mixin transition($properties, $duration: $transition-duration-base, $easing: $transition-easing-base) {
+  $list: ();
+  @each $prop in $properties {
+    $str: #{$prop} #{$duration} #{$easing};
+    $list: list.join($list, #{$str}, comma);
+  }
+  transition: $list;
+}
+
+@mixin chevron-right($color) {
+  $bg: str-replace($color, '#', '');
+  background-image: url('data:image/svg+xml,%3Csvg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"%3E %3Cpath fill="#{url-friendly-colour($color)}" d="M240.708 17.489c23.063 22.512 248.395 259.044 248.395 259.044 12.304 12.083 18.484 27.808 18.484 43.533s-6.179 31.449-18.484 43.422c0 0-225.333 236.644-248.395 259.044-23.063 22.512-64.554 24.056-89.107 0-24.607-23.946-26.539-57.436 0-86.845l206.739-215.622-206.739-215.623c-26.539-29.409-24.608-62.954 0-86.955 24.552-24.056 66.044-22.567 89.107 0z"%3E%3C/path%3E %3C/svg%3E');
+}
+
+@mixin font-size($fs-map, $fs-breakpoints: $breakpoints) {
+  @each $fs-breakpoint, $fs-font-size in $fs-map {
+    @if $fs-breakpoint == null {
+      @include make-font-size($fs-font-size);
+    }
+    @else {
+      // If $fs-font-size is a key that exists in
+      // $fs-breakpoints, use the value
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map.get($fs-breakpoints, $fs-breakpoint);
+      }
+      @media screen and (min-width: $fs-breakpoint) {
+        @include make-font-size($fs-font-size);
+      }
+    }
+  }
+}
+
+// Utility function for mixin font-size
+@mixin make-font-size($fs-font-size) {
+  // If $fs-font-size is a list, include
+  // both font-size and line-height
+  @if type-of($fs-font-size) == 'list' {
+    font-size: list.nth($fs-font-size, 1);
+    @if (length($fs-font-size) > 1) {
+      line-height: list.nth($fs-font-size, 2);
+    }
+  }
+  @else {
+    font-size: $fs-font-size;
+  }
+}

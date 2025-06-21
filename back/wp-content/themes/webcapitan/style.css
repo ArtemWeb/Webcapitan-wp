@@ -1,0 +1,28 @@
+/*!****************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/style.scss ***!
+  \****************************************************************************************************************/
+/*!
+  Theme Name: Webcapitan
+  Author: Anonymous
+  Author URI:
+  Version: 1
+  Description: Webcapitan theme for Wordpress
+  License: GNU General Public License v2 or later
+  License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+  Text Domain: Webcapitan
+  Tags: one-column, two-columns
+  Theme URI:
+*/
+body {
+  background-color: green;
+  font-size: 16px;
+  color: pink;
+}
+
+.wrapper {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/*# sourceMappingURL=style.css.map*/

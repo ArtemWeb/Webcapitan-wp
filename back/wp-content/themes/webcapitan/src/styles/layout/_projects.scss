@@ -1,0 +1,134 @@
+.projects{
+	background-color: $black_light;
+	padding: 10rem 0;
+	@include media(">=desktop"){
+		padding: 15rem 0 15rem;
+	}
+	&-items{
+		&_archives{
+			display: grid;
+			gap: 3rem;
+			grid-template-areas: "item1";
+			@include media(">=phone"){
+				grid-template-areas: "item1 item2";
+			}
+			@include media(">=tablet"){
+				grid-template-areas: "item1 item2 item3";
+			}
+		}
+	}
+	&-item{
+		@include media("<tablet"){
+			text-align: center;
+		}
+	}
+	&-button{
+		padding-top: 3rem;
+		text-align: center;
+		@include media(">=desktop"){
+			padding-top: 6rem;
+		}
+	}
+	&-title{
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		flex-direction: column;
+		padding-bottom: 6rem;
+		@include media(">=phone"){
+			flex-direction: inherit;
+		}
+	}
+	&-img{
+		padding-bottom: 2.3rem;
+		font-size: 0;
+		img{
+			max-width: 43rem;
+			max-height: 43rem;
+			height: 100%;
+			width: 100%;
+			&:hover{
+				opacity: 0.8;
+				transition: opacity .3s ease;
+			}
+		}
+		a{
+			display: inline-block;
+			&:hover{
+				opacity: 0.8;
+				transition: opacity .3s ease;
+			}
+		}
+	}
+	h2{
+		line-height: 2;
+	}
+	h5{
+		padding-bottom: 1.6rem;
+		margin: 0;
+		line-height: 1.3;
+		text-transform: uppercase;
+		color: $white;
+		a{
+			color: $white;
+			&:hover{
+				color: $red;
+			}
+		}
+	}
+	&-tags ul{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		text-transform: uppercase;
+		font-size: 1.2rem;
+		font-weight: $font-weight-black;
+		gap: 1rem;
+		@include media("<tablet"){
+			justify-content: center;
+		}
+		li{
+			border: 1px solid $red;
+			padding: 0.7rem 1rem;
+			line-height: 1.2;
+		}
+	}
+	.swiper-navigation{
+		display: flex;
+		gap: 1rem;
+		flex: 1 1 auto;
+		justify-content: flex-end;
+	}
+	.swiper-button{
+		&-prev,&-next{
+			position: relative;
+			width: 6rem;
+			height: 6rem;
+			border: 1px solid $red;
+			background-repeat: no-repeat;
+			background-position: center center;
+			left: 0;
+			right: 0;
+			margin: 0;
+			padding: 0;
+			&:after{
+				content: none;
+			}
+			&:hover{
+				background-color: rgba(70, 0, 0,0.8);
+			}
+		}
+		&-prev{
+			background-image: url(../images/arrow-left.svg);
+		}
+		&-next{
+			background-image: url(../images/arrow-right.svg);
+		}
+	}
+}
+

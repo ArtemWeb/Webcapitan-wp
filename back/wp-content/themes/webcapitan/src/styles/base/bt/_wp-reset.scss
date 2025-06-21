@@ -1,0 +1,313 @@
+// stylelint-disable selector-no-qualifying-type, selector-max-compound-selectors, selector-max-id
+$btn-color: $white;
+$btn-background: $black;
+$border-color: #ccc;
+$base-spacing: 20px;
+
+.two-columns {
+  @include media-breakpoint-up(md) {
+    display: flex;
+  }
+
+  .sidebar {
+    @include media-breakpoint-up(md) {
+      padding-left: 30px;
+      width: 30%;
+    }
+  }
+}
+
+.widget {
+  margin-bottom: $base-spacing;
+
+  ul {
+    padding-left: 32px;
+  }
+
+  select {
+    min-width: 150px;
+  }
+}
+
+.comment-form {
+  label {
+    display: block;
+    padding-bottom: 4px;
+  }
+
+  textarea {
+    overflow: auto;
+    margin: 0;
+    height: 120px;
+    min-height: 120px;
+  }
+
+  textarea,
+  input[type='text'] {
+    margin: 0 4px 0 0;
+    max-width: 300px;
+    width: 100%;
+  }
+
+  input[type='submit'] {
+    display: block;
+    float: none;
+  }
+}
+
+.post-password-form {
+  label {
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  input[type='password'] {
+    margin: 0 4px 0 0;
+    max-width: 300px;
+    width: 100%;
+  }
+}
+
+.search-form {
+  display: flex;
+  margin-bottom: 15px;
+
+  input {
+    height: 32px;
+    display: inline-flex;
+
+    &[type='search'] {
+      margin: 0 4px 0 0;
+      width: 150px;
+    }
+
+    &[type='submit'] {
+      flex-shrink: 0;
+    }
+  }
+}
+
+.post-password-form {
+  input {
+    display: inline-flex;
+    height: 32px;
+
+    &[type='password'] {
+      width: 150px;
+    }
+  }
+}
+
+.comment-form,
+.post-password-form,
+.search-form {
+  fieldset {
+    padding: 0;
+    border: 0;
+  }
+
+  input[type='submit'] {
+    background: $btn-background;
+    color: $btn-color;
+    height: 32px;
+    border: 0;
+    padding: 0 8px;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.commentlist {
+  margin: 0 0 $base-spacing;
+
+  .edit-link {
+    margin: 0;
+  }
+
+  .avatar-holder {
+    float: left;
+    margin: 0 $base-spacing 4px 0;
+  }
+}
+
+.commentlist-item {
+  .commentlist-item {
+    padding: 0;
+
+    @include media-breakpoint-up(md) {
+      padding: 0 0 0 32px;
+    }
+  }
+}
+
+.comment,
+.commentlist-holder {
+  overflow: hidden;
+}
+
+.commentlist-item .commentlist-item,
+.commentlist-item + .commentlist-item {
+  padding-top: $base-spacing;
+}
+
+.widget_calendar {
+  #next {
+    text-align: right;
+  }
+}
+
+.gallery-item {
+  dt {
+    float: none;
+    padding: 0;
+  }
+}
+
+.navigation,
+.navigation-comments {
+  position: relative;
+  vertical-align: middle;
+  margin-bottom: $base-spacing;
+
+  .screen-reader-text {
+    position: absolute;
+    left: -99999px;
+  }
+
+  .page-numbers {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 6px;
+
+    @include media-breakpoint-down(md) {
+      padding: 0 3px;
+    }
+  }
+
+  .next,
+  .prev {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 48%;
+    background: $btn-background;
+    color: $btn-color;
+    padding: 10px;
+    text-decoration: none;
+
+    @include media-breakpoint-down(md) {
+      padding: 4px;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.navigation-single {
+  margin-bottom: $base-spacing;
+  display: flex;
+  justify-content: space-between;
+
+  .next,
+  .prev {
+    display: inline-flex;
+    align-items: center;
+    max-width: 48%;
+    background: $btn-background;
+    color: $btn-color;
+    text-decoration: none;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      padding: 10px;
+      display: block;
+
+      @include media-breakpoint-down(md) {
+        padding: 4px;
+      }
+
+    }
+  }
+
+  .next {
+    a {
+      margin-left: auto;
+    }
+  }
+}
+
+.wp-caption {
+  max-width: 100%;
+  clear: both;
+  border: 1px solid $border-color;
+  padding: 10px;
+  margin-bottom: $base-spacing;
+
+  img {
+    margin: 0;
+    vertical-align: top;
+  }
+
+  p {
+    margin: 10px 0 0;
+  }
+}
+
+div.aligncenter {
+  margin: 0 auto $base-spacing;
+}
+
+img.aligncenter {
+  display: block;
+  margin: 0 auto;
+}
+
+.alignleft {
+  float: left;
+  margin: 0 $base-spacing 4px 0;
+}
+
+.alignright {
+  float: right;
+  margin: 0 0 4px $base-spacing;
+}
+
+.mejs-container {
+  margin-bottom: $base-spacing;
+}
+
+.wp-caption-text,
+.gallery,
+.alignnone,
+.gallery-caption,
+.sticky,
+.bypostauthor {
+  height: auto;
+}
+
+iframe {
+  @include media-breakpoint-down(lg) {
+    width: 100%;
+  }
+}
+
+#wp-calendar {
+  tbody {
+    td {
+      text-align: center;
+    }
+  }
+
+  td,
+  th {
+    border: 1px solid $border-color;
+  }
+}

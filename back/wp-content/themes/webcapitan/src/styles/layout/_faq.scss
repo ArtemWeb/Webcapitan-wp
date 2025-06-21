@@ -1,0 +1,81 @@
+.faq {
+	padding: 10rem 0;
+	@include media(">=laptop"){
+		padding: 20rem 0 21.5rem;
+	}
+	h2{
+		padding-bottom: 3rem;
+		text-align: center;
+		@include media(">=desktop"){
+			padding-bottom: 6rem;
+		}
+	}
+	&-items{
+		max-width: 112rem;
+		margin: 0 auto;
+	}
+	&-item {
+		position: relative;
+		border-top: 1px solid $grey;
+		padding: 1.5rem 4rem 2rem 0;
+		&:before{
+			content: "";
+			width: 1.8rem;
+			height: 0.4rem;
+			background-color: $white;
+			border-radius: 2rem;
+			position: absolute;
+			right: 0;
+			top: 2.6rem;
+			display: inline-block;
+		}
+		&:after{
+			content: "";
+			height: 1.8rem;
+			width: 0.4rem;
+			background-color: $white;
+			border-radius: 2rem;
+			position: absolute;
+			right: 0.7rem;
+			top: 1.9rem;
+			display: inline-block;
+		}
+		&.active{
+			padding: 1.5rem 4rem 0 0;
+			&:after{
+				content: none;
+			}
+			.slide{
+				height: 100%;
+				opacity: 1;
+				margin: 2rem 0;
+			}
+		}
+	}
+	&-text{
+		font-size: 1.8rem;
+		p{
+			line-height: 1.7;
+		}
+	}
+	h4{
+		cursor: pointer;
+		font-weight: $font-weight-semibold;
+		text-transform: none;
+		&:hover{
+			color: $red;
+			transition: color .3s ease;
+		}
+	}
+}
+
+.slide {
+	opacity: 0;
+	overflow: hidden;
+	height: 0;
+	transition: max-height 0.3s ease, margin 0.3s ease, height 0.3s ease, opacity 0.3s ease-out;
+	p {
+		margin: 0;
+		padding: 0;
+	}
+}

@@ -1,0 +1,15 @@
+{
+    "name": "acf\/faq",
+    "title": "Block Faq",
+    "acf": {
+        "renderTemplate": "faq.php",
+        "mode": "edit"
+    },
+    "description": "",
+    "category": "custom-acf-blocks",
+    "icon": "editor-code",
+    "keywords": [],
+    "supports": {
+        "anchor": true
+    }
+}
